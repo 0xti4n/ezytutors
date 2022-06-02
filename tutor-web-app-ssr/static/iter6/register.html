@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor registration</title>
+    <link rel="stylesheet" href="../iter5/styles/tutor-styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to EzyTutor</h1>
+        <p>Start your own online tutor business in a few minutes</p>
+    </div>
+    <div class="center">
+        <h2>
+            Tutor registration
+        </h2>
+        <form action="/register" method="post">
+            <label for="userid">Enter username</label><br>
+            <input type="text" name="username" value="{{ current_username }}" autocomplete="username" minlength="6" maxlength="12" required><br>
+            <label for="password">Enter password</label><br>
+            <input type="password" name="password" value="{{ current_password }}" autocomplete="new-password" minlength="8" maxlength="12" required><br>
+            <label for="confirm">Confirm password</label><br>
+            <input type="password" name="confirmation" value="{{ current_confirmation }}" autocomplete="new-password" minlength="8" maxlength="12" required><br>
+            <label for="userid">Enter tutor name</label><br>
+            <input type="text" name="name" value="{{ current_name }}" maxlength="12" required><br>
+            <label for="imageurl">Enter tutor image url</label><br>
+            <input type="text" name="imageurl" value="{{ current_imageurl }}" maxlength="30"><br>
+            <label for="profile">Brief tutor profile</label><br>
+            <input type="text" name="profile" value="{{ current_profile }}" maxlength="40"><br>
+            <label for="error">
+                <p style="color:red">{{ error }}</p>
+            </label>
+            <br>
+            <button type="submit" id="button1">Register</button>
+        </form>
+        <form action="/signinform" method="get">
+            <button type="submit">
+                Sign in
+            </button>
+        </form>
+    </div>
+    <p>
+        <div id="footer">
+            (c)Photo by Author
+        </div>
+    </p>
+</body>
+
+<style>
+    .header {
+        padding: 10px;
+        text-align: center;
+        background: #fad980;
+        color: rgb(48, 40, 43);
+        font-size: 30px;
+    }
+
+    .center {
+        margin: auto;
+        width: 20%;
+        min-width: 150px;
+        border: 3px solid #ad5921;
+        padding: 10px;
+    }
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-kerning: normal;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    div {
+        background-color: rgba(241, 235, 235, 0.719);
+    }
+
+    body {
+        /* background-image: url('/tutor-web-app-ssr/static/background.jpg'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 500px;
+    }
+
+    #button1, #button2 {
+        display: inline-block;
+    }
+
+    #footer {
+        position: fixed;
+        padding: 10px 10px 0px 10px;
+        bottom: 0;
+        width: 100%;
+        height: 20px;
+    }
+
+</style>
+</html>
